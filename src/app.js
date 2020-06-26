@@ -71,7 +71,7 @@ app.get("/weather", (req, res) => {
         error: err,
       });
     }
-    forecast(latitude, logitute, (error, { Temperature }) => {
+    forecast(latitude, logitute, (error, { Temperature, Description }) => {
       if (error) {
         return res.send({
           error,
@@ -81,6 +81,7 @@ app.get("/weather", (req, res) => {
         place: req.query.address,
         location: Place,
         forecast: Temperature,
+        description: Description,
       });
     });
   });

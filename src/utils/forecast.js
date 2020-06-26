@@ -20,6 +20,13 @@ const forecast = (lat, long, callback) => {
           res.body.current.temperature +
           ", but it feels like " +
           res.body.current.feelslike,
+        Description:
+          "It is " +
+          res.body.current.weather_descriptions[0] +
+          " with wind speed of " +
+          res.body.current.wind_speed +
+          " and humidity of " +
+          res.body.current.humidity,
       });
     }
   });
